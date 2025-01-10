@@ -24,6 +24,7 @@ import { useFormStatus } from "react-dom";
 import { Loader2Icon } from "lucide-react";
 import { submitBid } from "@/actions/submitBid";
 import { AnimatePresence, motion } from "motion/react";
+import { User as UserType } from "@/types";
 
 type Item = {
   item: Prisma.AuctionLotGetPayload<{
@@ -42,12 +43,7 @@ type Item = {
 };
 
 type User = {
-  user: {
-    userId: string;
-    userEmail: string;
-    userRole: "ADMIN" | "USER";
-    userName: string;
-  } | null;
+  user: UserType;
 };
 type ClassName = {
   className?: string;

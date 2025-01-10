@@ -1,4 +1,5 @@
 import LotCard from "@/components/LotCard";
+import { User } from "@/types";
 import { Prisma } from "@prisma/client";
 import React from "react";
 
@@ -8,12 +9,7 @@ type Props = {
       bids: true;
     };
   }>[];
-  user: {
-    userId: string;
-    userEmail: string;
-    userRole: "ADMIN" | "USER";
-    userName: string;
-  } | null;
+  user: User;
 };
 const Auctions = ({ data, user }: Props) => {
   return (

@@ -12,14 +12,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
+import {
+  LogOutIcon,
+  PackageIcon,
+  PackagePlusIcon,
+  ScrollTextIcon,
+} from "lucide-react";
+import { User } from "@/types";
 
 type Props = {
-  user: {
-    userId: string;
-    userEmail: string;
-    userRole: "ADMIN" | "USER";
-    userName: string;
-  } | null;
+  user: User;
 };
 const Header = ({ user }: Props) => {
   return (
@@ -34,12 +36,7 @@ const Header = ({ user }: Props) => {
             user.userRole === "ADMIN" ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button
-                    className="bg-white text-black hover:bg-gray-200"
-                    size="lg"
-                  >
-                    Admin
-                  </Button>
+                  <Button size="lg">Admin</Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem asChild>
@@ -60,7 +57,20 @@ const Header = ({ user }: Props) => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem asChild>
-                    <Link href="/bids" className="cursor-pointer">
+                    <Link href="/lots/create" className="cursor-pointer">
+                      <PackagePlusIcon />
+                      Create Auction Lot
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/lots" className="cursor-pointer">
+                      <PackageIcon />
+                      My Lots
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/lots/bids" className="cursor-pointer">
+                      <ScrollTextIcon />
                       My Bids
                     </Link>
                   </DropdownMenuItem>
@@ -104,10 +114,11 @@ const LogoutBtn = () => {
   };
   return (
     <Button
-      className="cursor-pointer w-full"
+      className="cursor-pointer w-full justify-start"
       variant="destructive"
       onClick={handleLogout}
     >
+      <LogOutIcon />
       Logout
     </Button>
   );

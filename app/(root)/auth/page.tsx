@@ -77,8 +77,8 @@ const CheckForm = ({ email, setEmail, setStep }: CheckFormProps) => {
   }, [state.success]);
   return (
     <Form
-      title="Welcome back!"
-      subtitle="Enter your password to log in"
+      title="Welcome"
+      subtitle="Log in or Register with your email"
       error={state.formError}
       action={formAction}
     >
@@ -118,8 +118,8 @@ const LoginForm = ({ redirectUrl, email, setStep }: LoginFormProps) => {
   };
   return (
     <Form
-      title="Welcome!"
-      subtitle="Log in or Register"
+      title="Welcome back!"
+      subtitle="Enter your password to log in"
       onBack={handleBack}
       action={formAction}
       error={state.formError}
