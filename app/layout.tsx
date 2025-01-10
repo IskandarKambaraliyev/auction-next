@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import updateLots from "@/lib/updateLots";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -65,11 +66,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  await updateLots();
   return (
     <html lang="en">
       <body className={`${roboto.className}`}>

@@ -150,28 +150,30 @@ const Images = ({ item }: Item) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        loop={item.images.length > 4}
-        spaceBetween={10}
-        slidesPerView={Math.min(item.images.length, 4)}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper"
-      >
-        {item.images.map((img) => (
-          <SwiperSlide key={img}>
-            <img
-              src={img}
-              alt={`Lot image for - ${item.title}`}
-              width={160}
-              height={90}
-              className="aspect-video w-full object-cover"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {item.images.length > 1 && (
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          loop={item.images.length > 4}
+          spaceBetween={10}
+          slidesPerView={Math.min(item.images.length, 4)}
+          freeMode={true}
+          watchSlidesProgress={true}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className="mySwiper"
+        >
+          {item.images.map((img) => (
+            <SwiperSlide key={img}>
+              <img
+                src={img}
+                alt={`Lot image for - ${item.title}`}
+                width={160}
+                height={90}
+                className="aspect-video w-full object-cover"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
     </div>
   );
 };
