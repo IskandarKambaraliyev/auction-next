@@ -1,7 +1,8 @@
 import LotCard from "@/components/LotCard";
-import { User } from "@/types";
+
 import { Prisma } from "@prisma/client";
-import React from "react";
+
+import { User } from "@/types";
 
 type Props = {
   data: Prisma.AuctionLotGetPayload<{

@@ -1,4 +1,5 @@
 import LotCard from "@/components/LotCard";
+
 import prisma from "@/lib/db";
 
 export default async function AdminPage() {

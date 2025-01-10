@@ -1,8 +1,9 @@
-import { Prisma } from "@prisma/client";
-import Image from "next/image";
-import CountdownTimer from "@/components/CountdownTimer";
-import { format } from "date-fns";
 import Link from "next/link";
+import { format } from "date-fns";
+
+import CountdownTimer from "@/components/CountdownTimer";
+
+import { Prisma } from "@prisma/client";
 
 type Props = {
   data: Prisma.AuctionLotGetPayload<{}>;

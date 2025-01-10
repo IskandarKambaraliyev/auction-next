@@ -1,6 +1,8 @@
-import Create from "@/components/section/lots/Create";
-import getUserInfo from "@/hooks/getUserInfo";
 import { Metadata } from "next";
+
+import Create from "@/components/section/lots/Create";
+
+import getUserInfo from "@/hooks/getUserInfo";
 
 export const metadata: Metadata = {
   title: "Create a Lot",

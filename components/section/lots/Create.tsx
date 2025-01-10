@@ -1,40 +1,30 @@
 "use client";
 
-import { CustomInput } from "@/components/custom";
-import { User } from "@/types";
-import { ReactNode, useRef, useState } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { allSubjects } from "@/data";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { CalendarIcon, Loader2Icon, XIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { useState, useRef, ReactNode } from "react";
+import { useRouter } from "next/navigation";
 import { format, formatDistanceToNow } from "date-fns";
-import { Input } from "@/components/ui/input";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper/types";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { CalendarIcon, Loader2Icon, XIcon } from "lucide-react";
+
+import { CustomInput } from "@/components/custom";
+import { User } from "@/types";
+import { allSubjects } from "@/data";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
+import { formatAmount } from "@/hooks/format";
+import CountdownTimer from "@/components/CountdownTimer";
+import { useToast } from "@/hooks/use-toast";
 
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { formatAmount } from "@/hooks/format";
-import CountdownTimer from "@/components/CountdownTimer";
-import { useRouter } from "next/navigation";
-import { useToast } from "@/hooks/use-toast";
 
 type State = {
   title: string;

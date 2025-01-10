@@ -1,5 +1,7 @@
 import LotCard from "@/components/LotCard";
+
 import getUserInfo from "@/hooks/getUserInfo";
+
 import prisma from "@/lib/db";
 
 export default async function BidsPage() {

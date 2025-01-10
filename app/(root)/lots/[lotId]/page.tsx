@@ -1,7 +1,10 @@
-import Detail from "@/components/section/lots/Detail";
-import getUserInfo from "@/hooks/getUserInfo";
-import prisma from "@/lib/db";
 import { Metadata } from "next";
+
+import Detail from "@/components/section/lots/Detail";
+
+import getUserInfo from "@/hooks/getUserInfo";
+
+import prisma from "@/lib/db";
 
 const getLot = async (lotId: string) => {
   return await prisma.auctionLot.findUnique({

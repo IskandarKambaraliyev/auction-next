@@ -1,30 +1,27 @@
 "use client";
 
-import CountdownTimer from "@/components/CountdownTimer";
-import { formatAmount } from "@/hooks/format";
-import { cn } from "@/lib/utils";
+import { useActionState, useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useFormStatus } from "react-dom";
+import { format } from "date-fns";
 import { Prisma } from "@prisma/client";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper/types";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-
+import { AnimatePresence, motion } from "motion/react";
+import { Loader2Icon } from "lucide-react";
+import CountdownTimer from "@/components/CountdownTimer";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { submitBid } from "@/actions/submitBid";
+import { formatAmount } from "@/hooks/format";
+import { cn } from "@/lib/utils";
+import { User as UserType } from "@/types";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { useActionState, useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { format } from "date-fns";
-import { Button } from "@/components/ui/button";
-import { usePathname } from "next/navigation";
-import { Input } from "@/components/ui/input";
-import { useFormStatus } from "react-dom";
-import { Loader2Icon } from "lucide-react";
-import { submitBid } from "@/actions/submitBid";
-import { AnimatePresence, motion } from "motion/react";
-import { User as UserType } from "@/types";
 
 type Item = {
   item: Prisma.AuctionLotGetPayload<{

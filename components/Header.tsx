@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import {
   LogOutIcon,
@@ -18,6 +18,7 @@ import {
   PackagePlusIcon,
   ScrollTextIcon,
 } from "lucide-react";
+
 import { User } from "@/types";
 
 type Props = {

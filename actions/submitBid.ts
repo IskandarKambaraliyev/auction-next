@@ -1,9 +1,11 @@
 "use server";
 
-import getUserInfo from "@/hooks/getUserInfo";
-import prisma from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
+
+import prisma from "@/lib/db";
+
+import getUserInfo from "@/hooks/getUserInfo";
 
 const bidSchema = z.object({
   amount: z

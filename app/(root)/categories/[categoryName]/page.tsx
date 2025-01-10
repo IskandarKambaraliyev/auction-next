@@ -1,7 +1,9 @@
 import LotCard from "@/components/LotCard";
 import Subjects from "@/components/Subjects";
-import { allSubjects } from "@/data";
+
 import prisma from "@/lib/db";
+
+import { allSubjects } from "@/data";
 
 type Props = {
   params: Promise<{ categoryName: string }>;

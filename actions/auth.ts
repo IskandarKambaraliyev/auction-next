@@ -1,10 +1,12 @@
 "use server";
-import prisma from "@/lib/db";
+
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { z } from "zod";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+
+import prisma from "@/lib/db";
 
 const authCheckSchema = z.object({
   email: z.string().email(),

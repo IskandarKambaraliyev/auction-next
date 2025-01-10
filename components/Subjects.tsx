@@ -1,13 +1,10 @@
 "use client";
 
+import Link from "next/link";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import Link from "next/link";
-import { allSubjects } from "@/data";
 import {
   BookImageIcon,
   BuildingIcon,
@@ -16,6 +13,12 @@ import {
   PaletteIcon,
   PawPrintIcon,
 } from "lucide-react";
+
+import { allSubjects } from "@/data";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
 
 const Subjects = () => {
   return (

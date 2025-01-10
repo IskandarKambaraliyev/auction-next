@@ -1,13 +1,13 @@
 "use client";
 
-import { formatAmount } from "@/hooks/format";
-import { Prisma } from "@prisma/client";
-import { format } from "date-fns";
-import { EditIcon } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { redirect, useRouter } from "next/navigation";
-import React from "react";
+import { format } from "date-fns";
+
+import { EditIcon } from "lucide-react";
+
+import { formatAmount } from "@/hooks/format";
+
+import { Prisma } from "@prisma/client";
 
 type Props = {
   item: Prisma.AuctionLotGetPayload<{
@@ -18,10 +18,6 @@ type Props = {
   isAdmin?: boolean;
 };
 const LotCard = ({ item, isAdmin = false }: Props) => {
-  const router = useRouter();
-  const handleClickEdit = () => {
-    router.push(`/admin/lots/${item.id}`);
-  };
   return (
     <div className="relative">
       {isAdmin && (

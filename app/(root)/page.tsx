@@ -1,7 +1,9 @@
 import Auctions from "@/components/section/main/Auctions";
 import Hero from "@/components/section/main/Hero";
 import Subjects from "@/components/Subjects";
+
 import getUserInfo from "@/hooks/getUserInfo";
+
 import prisma from "@/lib/db";
 
 export default async function HomePage() {

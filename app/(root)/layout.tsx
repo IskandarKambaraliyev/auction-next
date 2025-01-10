@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+
 import getUserInfo from "@/hooks/getUserInfo";
 
 export default async function RootLayout({

@@ -1,13 +1,16 @@
 "use client";
 
-import { authCheck, authLogin, authRegister } from "@/actions/auth";
-import { CustomInput } from "@/components/custom";
-import { Button } from "@/components/ui/button";
-import { ArrowLeftIcon, Loader2Icon } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import { useSearchParams } from "next/navigation";
 import { useActionState, useEffect, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
+import { useSearchParams } from "next/navigation";
+
+import { ArrowLeftIcon, Loader2Icon } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+
+import { CustomInput } from "@/components/custom";
+import { Button } from "@/components/ui/button";
+
+import { authCheck, authLogin, authRegister } from "@/actions/auth";
 
 type EmailError = {
   emailError: string | null;

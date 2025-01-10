@@ -1,8 +1,11 @@
-import { allSubjects } from "@/data";
-import getUserInfo from "@/hooks/getUserInfo";
-import prisma from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+
+import getUserInfo from "@/hooks/getUserInfo";
+
+import prisma from "@/lib/db";
+
+import { allSubjects } from "@/data";
 
 const schema = z.object({
   id: z.string().cuid(),

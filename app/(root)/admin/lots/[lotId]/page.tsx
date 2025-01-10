@@ -1,5 +1,7 @@
 import Create from "@/components/section/admin/Create";
+
 import getUserInfo from "@/hooks/getUserInfo";
+
 import prisma from "@/lib/db";
 
 const getLot = async (lotId: string) => {
