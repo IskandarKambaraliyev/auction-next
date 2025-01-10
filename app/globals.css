@@ -6,6 +6,37 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer utilities {
+  .container {
+    max-width: 1200px;
+    width: calc(100% - 2rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inset-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .inset-y-center {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .inset-x-center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
